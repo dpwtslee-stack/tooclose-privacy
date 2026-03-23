@@ -13,7 +13,7 @@
 </head>
 <body>
     <h1>TooClose - Privacy Policy</h1>
-    <p class="date">Last updated: March 19, 2026</p>
+    <p class="date">Last updated: March 23, 2026</p>
 
     <h2>Overview</h2>
     <p>TooClose ("we", "the app") is an eye protection application that monitors the distance between your face and the screen. We are committed to protecting your privacy and being transparent about our data practices.</p>
@@ -21,7 +21,8 @@
     <h2>Data Collection</h2>
     <p><strong>TooClose does NOT collect, store, or transmit any personal data.</strong></p>
     <ul>
-        <li><strong>Camera Data:</strong> The app uses the front-facing camera solely to detect faces and estimate distance. All image processing is performed on-device using Google ML Kit. Camera frames are processed in real-time and immediately discarded. No images or video are ever saved, stored, or transmitted.</li>
+        <li><strong>Camera Data:</strong> The app uses the front-facing camera solely to detect faces, iris landmarks, and estimate distance. All image processing is performed entirely on-device using Google ML Kit and Google MediaPipe. Camera frames are processed in real-time and immediately discarded. No images or video are ever saved, stored, or transmitted.</li>
+        <li><strong>Iris Detection:</strong> The app may use iris landmark detection (via MediaPipe FaceLandmarker) for more accurate distance estimation. Iris data is processed on-device only and is not stored or transmitted. No biometric identification is performed — iris data is used solely for distance measurement.</li>
         <li><strong>Settings:</strong> Your app preferences (distance threshold, detection interval, etc.) are stored locally on your device using Android DataStore. This data never leaves your device.</li>
         <li><strong>No Analytics:</strong> We do not use any analytics or tracking services.</li>
         <li><strong>No Cloud Services:</strong> The app works entirely offline. No internet connection is required for core functionality.</li>
@@ -30,21 +31,22 @@
     <h2>Permissions</h2>
     <p>The app requests the following permissions:</p>
     <ul>
-        <li><strong>Camera:</strong> Required to detect faces and measure distance. Used only while the monitoring service is active.</li>
+        <li><strong>Camera:</strong> Required to detect faces/iris and measure distance. Used only while the monitoring service is active.</li>
         <li><strong>Display over other apps (Overlay):</strong> Required to show warning banners and screen blocking overlays on top of other apps.</li>
-        <li><strong>Foreground Service:</strong> Required to run face detection in the background while you use other apps.</li>
+        <li><strong>Foreground Service:</strong> Required to run face/iris detection in the background while you use other apps.</li>
         <li><strong>Notifications:</strong> Required to show the persistent notification indicating the service is running.</li>
         <li><strong>Boot Completed:</strong> Optional. Used to automatically restart monitoring after device reboot, if enabled in settings.</li>
     </ul>
 
     <h2>Third-Party Services</h2>
     <ul>
-        <li><strong>Google ML Kit (Face Detection):</strong> Used for on-device face detection. No data is sent to Google. See <a href="https://developers.google.com/ml-kit/terms">ML Kit Terms</a>.</li>
+        <li><strong>Google ML Kit (Face Detection):</strong> Used for on-device face detection in Standard mode. No data is sent to Google. See <a href="https://developers.google.com/ml-kit/terms">ML Kit Terms</a>.</li>
+        <li><strong>Google MediaPipe (Face Landmarker):</strong> Used for on-device iris landmark detection in Advanced (Iris) mode. All processing is local — no data is sent to Google. See <a href="https://developers.google.com/mediapipe/solutions/vision/face_landmarker">MediaPipe Documentation</a>.</li>
         <li><strong>Google AdMob:</strong> The app displays advertisements through Google AdMob. AdMob may collect device identifiers and usage data for ad personalization. See <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. You can opt out of personalized ads in your device settings.</li>
     </ul>
 
     <h2>Children's Privacy</h2>
-    <p>TooClose includes a "Kids Eye Protection" mode designed for children. The app does not knowingly collect any personal information from children. All processing occurs on-device with no data transmission.</p>
+    <p>TooClose includes a "Kids Eye Protection" mode designed for children. The app does not knowingly collect any personal information from children. All processing occurs on-device with no data transmission. The app targets users aged 13 and above.</p>
 
     <h2>Data Security</h2>
     <p>Since no personal data is collected or transmitted, there is no risk of data breach from our app. All settings are stored locally using Android's encrypted DataStore.</p>
